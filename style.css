@@ -10,8 +10,13 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    color: #292929;
-    background-color: #f2f2f2;
+    color: #1f2a24;
+    background-color: #f4f3ef;
+    background-image: url("tło.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
     min-height: 100vh;
     display: flex;
@@ -28,7 +33,7 @@ body {
 /* Nagłówek strony */
 
 header {
-    background-color: #762727;
+    background-color: #244235;
     color: white;
     padding: 20px;
     text-align: center;
@@ -54,14 +59,34 @@ header h1 a:hover {
 
 .slogan {
     margin: 5px 0 0;
-    color: #f1dddd;
+    color: #dce7e1;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px 0;
+}
+
+.logo {
+    position: absolute;
+    left: 2vw;
+    width: 100px;
+    height: auto;
+    background-color: white;
+    padding: 5px;
+    border-radius: 8px;
 }
 
 /* Menu nawigacyjne */
 
 nav {
-    background-color: #501b1b;
-
+    background-color: #182e24;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
@@ -89,9 +114,46 @@ nav a {
 
 @media (hover:hover) {
     nav a:hover {
-        background-color: #963d3d;
+        background-color: #2f5444;
+        transform: scale(1.05);
     }
 }
+
+@media (hover:hover) {
+    nav a:hover {
+        background-color: #2f5444;
+        transform: scale(1.05);
+    }
+}
+
+/* Przycisk hamburgera - ukryty na komputerach */
+
+#menu-toggle {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: #182e24;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#menu-toggle i {
+    font-size: 2rem;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+#menu-toggle:hover {
+    background-color: #244235;
+}
+
+#menu-toggle:hover i {
+    transform: rotate(90deg);
+}
+
 
 /* Baner tekstowy */
 
@@ -99,8 +161,8 @@ nav a {
     padding: 40px 0;
     text-align: center;
     color: white;
-    background-color: #9b4545;
-    border-bottom: 5px solid #d5b7a0;
+    background-color: #355e4b;
+    border-bottom: 5px solid #c9b082;
 }
 
 .banner h2 {
@@ -117,7 +179,12 @@ nav a {
 
 main {
     flex: 1;
-    padding: 20px, 10%;
+    display: flex;
+    gap: clamp(1rem, 2vw, 3rem);
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .sections {
@@ -131,13 +198,13 @@ main {
     min-width: 0;
     margin-bottom: 20px;
     padding: 20px 24px;
-    background-color: white;
-    border: 1px solid #dddddd;
+    background-color: #faf9f6;
+    border: 1px solid #dedad0;
 }
 
 .section-box h2 {
     margin-top: 0;
-    color: #762727;
+    color: #244235;
 }
 
 .section-box p:last-child {
@@ -145,18 +212,23 @@ main {
 }
 
 a {
-    color: #762727;
+    color: #244235;
 }
 
 /* Główna treść podstron */
 
 .page-content {
-    padding-top: 25px;
-    padding-bottom: 25px;
+    display: block;
+    padding: 25px 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: #faf9f6;
+    border: 1px solid #dedad0;
+    border-radius: 8px;
 }
 
 .page-content>h2 {
-    color: #762727;
+    color: #244235;
 }
 
 /* Kolumny i obrazy */
@@ -164,7 +236,7 @@ a {
 .kolumna {
     flex: 1;
     min-width: 0;
-    background-color: #ecf0f1;
+    background-color: #faf9f6;
     padding: 20px;
     border-radius: 8px;
 }
@@ -178,37 +250,137 @@ a {
     height: auto;
 }
 
+.lista-gatunkow {
+    max-height: 200px;
+    /* Stała wysokość ukrywająca część listy */
+    overflow: auto;
+    padding: 20px;
+    border: 2px solid #dedad0;
+    background-color: #faf9f6;
+    scroll-behavior: smooth;
+    margin-bottom: 15px;
+}
+
+.lista-gatunkow ul {
+    list-style-position: inside;
+    /* Żeby kropki listy nie wychodziły poza ramkę */
+}
+
+.przyciski {
+    display: flex;
+    gap: 10px;
+}
+
+.przyciski button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #182e24;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.przyciski button:hover {
+    background-color: #2f5444;
+}
+
 /* Stopka */
 
 footer {
-    background-color: #762727;
+    background-color: #244235;
     color: white;
 }
 
 .footer-content {
     width: min(1000px, 90%);
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 40px 0;
+    /* Zwiększony odstęp góra-dół z 20px na 40px */
+    text-align: center;
+    /* Dodane wyśrodkowanie całej zawartości */
 }
 
 .footer-content h2 {
     margin-top: 0;
-    font-size: 20px;
+    margin-bottom: 15px;
+    /* Dodany odstęp pod nagłówkiem */
+    font-size: 22px;
+    /* Lekko powiększony nagłówek */
+    color: #d8c39e;
+    /* Zmieniony kolor nagłówka na beżowy (ten sam co pod banerem) */
+}
+
+/* Nowa reguła: dodaje delikatne odstępy między linijkami tekstu */
+.footer-content p {
+    margin-bottom: 8px;
 }
 
 .footer-content a {
     color: white;
+    text-decoration: underline;
+    /* Podkreślenie, żeby adres e-mail był wyraźniejszy */
 }
 
 .copyright {
     padding: 10px 0;
     text-align: center;
-    background-color: #501b1b;
-    color: #f1dddd;
+    background-color: #182e24;
+    color: #dce7e1;
 }
 
 .copyright p {
     margin: 0;
+}
+
+/* Animacja najechania na pudełka sekcji - płynne przejście */
+.section-box,
+.kolumna {
+    transition: transform 0.3s ease;
+}
+
+/* Po najechaniu myszką kafelki nieznacznie się powiększą */
+.section-box:hover,
+.kolumna:hover {
+    transform: scale(1.03);
+}
+
+/* --- KOD OKNA MODALNEGO --- */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #faf9f6;
+    padding: 30px;
+    width: min(90%, 400px);
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.no-scroll {
+    overflow: hidden;
 }
 
 /* Responsywność strony */
@@ -218,7 +390,7 @@ footer {
         padding: 20px, 5%;
     }
 
-    .sections {
+    main {
         flex-direction: column;
     }
 
@@ -249,5 +421,42 @@ footer {
 
     .section-box {
         margin-bottom: 0;
+    }
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        position: static;
+    }
+
+    .logo {
+        position: static;
+        margin-bottom: 15px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        position: static;
+    }
+
+    .logo {
+        position: static;
+        margin-bottom: 15px;
+    }
+
+    /* KOD Z KROKU 5: */
+    #menu-toggle {
+        display: flex;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu.active {
+        display: flex;
     }
 }

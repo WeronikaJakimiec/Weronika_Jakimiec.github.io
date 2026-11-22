@@ -15,21 +15,36 @@
     />
 
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
   </head>
 
   <body>
     <header>
-      <div class="content">
-        <h1>
-          <a href="index.html">
-            Czerwona lista gatunków zagrożonych w Polsce
-          </a>
-        </h1>
-        <p class="slogan">Zadbajmy o naszą przyrodę</p>
+      <div class="header-container">
+        <img
+          src="logo-strona.jpg"
+          alt="Logo Czerwonej Listy IUCN"
+          class="logo"
+        />
+
+        <div class="header-text">
+          <h1>
+            <a href="index.html">
+              Czerwona lista gatunków zagrożonych w Polsce
+            </a>
+          </h1>
+          <p class="slogan">Zadbajmy o naszą przyrodę</p>
+        </div>
       </div>
 
       <nav>
-        <ul>
+        <button id="menu-toggle" aria-label="Otwórz menu">
+          <i class="bi bi-list"></i>
+        </button>
+        <ul class="menu">
           <li><a href="index.html">Strona główna</a></li>
           <li><a href="gatunki.html">Zagrożone gatunki</a></li>
           <li><a href="ochrona.html">Jak je chronić?</a></li>
@@ -110,6 +125,38 @@
           porównywaniu danych należy sprawdzić źródło oraz rok oceny.
         </p>
       </section>
+
+      <section class="section-box">
+        <h2>Pełna lista monitorowanych gatunków</h2>
+
+        <div class="lista-gatunkow" id="lista">
+          <ul>
+            <li>Głuszec (CR)</li>
+            <li>Kraska (CR)</li>
+            <li>Sokół wędrowny (CR)</li>
+            <li>Wąż Eskulapa (CR)</li>
+            <li>Cietrzew (EN)</li>
+            <li>Żbik (EN)</li>
+            <li>Żubr (EN)</li>
+            <li>Żółw błotny (EN)</li>
+            <li>Gniewosz plamisty (VU)</li>
+            <li>Wodniczka (VU)</li>
+            <li>Piekielnica (VU)</li>
+            <li>Ryś (NT)</li>
+            <li>Wilk (NT)</li>
+            <li>Niedźwiedź brunatny (NT)</li>
+            <li>Morświn</li>
+            <li>Orzeł przedni</li>
+            <li>Puchacz</li>
+            <li>Nocek łydkowłosy</li>
+          </ul>
+        </div>
+
+        <div class="przyciski">
+          <button id="dol">Przewiń w dół</button>
+          <button id="gora">Przewiń na górę</button>
+        </div>
+      </section>
     </main>
 
     <footer>
@@ -126,5 +173,32 @@
         <p>2026 Czerwona lista gatunków zagrożonych w Polsce</p>
       </div>
     </footer>
+    <script>
+      const hamburger = document.querySelector("#menu-toggle");
+      const menu = document.querySelector(".menu");
+
+      hamburger.addEventListener("click", () => {
+        menu.classList.toggle("active");
+      });
+    </script>
+    <script>
+      const lista = document.querySelector("#lista");
+      const przyciskDol = document.querySelector("#dol");
+      const przyciskGora = document.querySelector("#gora");
+
+      przyciskDol.addEventListener("click", () => {
+        lista.scrollBy({
+          top: 100,
+          behavior: "smooth",
+        });
+      });
+
+      przyciskGora.addEventListener("click", () => {
+        lista.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
   </body>
 </html>
