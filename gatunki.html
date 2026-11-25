@@ -25,7 +25,7 @@
     <header>
       <div class="header-container">
         <img
-          src="logo-strona.jpg"
+          src="images/logo-strona.jpg"
           alt="Logo Czerwonej Listy IUCN"
           class="logo"
         />
@@ -41,10 +41,16 @@
       </div>
 
       <nav>
-        <button id="menu-toggle" aria-label="Otwórz menu">
-          <i class="bi bi-list"></i>
+        <button
+          id="menu-toggle"
+          type="button"
+          aria-label="Otwórz menu"
+          aria-controls="menu-list"
+          aria-expanded="false"
+        >
+          <i class="bi bi-list" aria-hidden="true"></i>
         </button>
-        <ul class="menu">
+        <ul class="menu" id="menu-list">
           <li><a href="index.html">Strona główna</a></li>
           <li><a href="gatunki.html">Zagrożone gatunki</a></li>
           <li><a href="ochrona.html">Jak je chronić?</a></li>
@@ -62,6 +68,200 @@
         przywołanych materiałów i nie stanowią niezależnej, aktualnej oceny
         każdego gatunku.
       </p>
+
+      <section class="section-box galeria-sekcja" aria-labelledby="galeria-title">
+        <h2 id="galeria-title">Galeria wybranych zwierząt</h2>
+        <p>
+          Przewijaj zdjęcia przyciskami lub klawiszami strzałek. Nazwy zwierząt
+          są widoczne nad zdjęciami.
+        </p>
+        <div class="galeria-przyciski">
+          <button
+            id="galeria-wstecz"
+            type="button"
+            aria-label="Przewiń galerię w lewo"
+          >
+            &larr; Poprzednie
+          </button>
+          <button
+            id="galeria-dalej"
+            type="button"
+            aria-label="Przewiń galerię w prawo"
+          >
+            Następne &rarr;
+          </button>
+        </div>
+        <div
+          class="galeria-zwierzat"
+          id="galeria-zwierzat"
+          role="region"
+          aria-label="Galeria zdjęć zagrożonych zwierząt"
+          tabindex="0"
+        >
+          <figure>
+            <figcaption>Głuszec</figcaption>
+            <img
+              src="images/gluszec.jpg"
+              alt="Głuszec w leśnym otoczeniu"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure>
+            <figcaption>Kraska</figcaption>
+            <img
+              src="images/kraska.jpg"
+              alt="Kraska siedząca na gałęzi"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure>
+            <figcaption>Sokół wędrowny</figcaption>
+            <img
+              src="images/sokol-wedrowny.jpg"
+              alt="Sokół wędrowny w locie"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure>
+            <figcaption>Wąż Eskulapa</figcaption>
+            <img
+              src="images/waz-eskulapa.jpg"
+              alt="Wąż Eskulapa"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure>
+            <figcaption>Cietrzew</figcaption>
+            <img
+              src="images/cietrzew.jpg"
+              alt="Cietrzew"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure>
+            <figcaption>Żbik</figcaption>
+            <img
+              src="images/zbik.jpg"
+              alt="Żbik europejski"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure>
+            <figcaption>Żubr</figcaption>
+            <img
+              src="images/zubr.jpg"
+              alt="Żubr w naturalnym otoczeniu"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure>
+            <figcaption>Żółw błotny</figcaption>
+            <img
+              src="images/zolw-blotny.jpg"
+              alt="Żółw błotny w środowisku naturalnym"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure>
+            <figcaption>Gniewosz plamisty</figcaption>
+            <img
+              src="images/gniewosz-plamisty.png"
+              alt="Gniewosz plamisty"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure>
+            <figcaption>Wodniczka</figcaption>
+            <img
+              src="images/wodniczka.jpg"
+              alt="Wodniczka"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure>
+            <figcaption>Piekielnica</figcaption>
+            <img
+              src="images/piekielnica.jpg"
+              alt="Piekielnica"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure>
+            <figcaption>Ryś</figcaption>
+            <img
+              src="images/rys.jpg"
+              alt="Ryś euroazjatycki"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure>
+            <figcaption>Wilk</figcaption>
+            <img
+              src="images/wilk.jpg"
+              alt="Wilk"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure>
+            <figcaption>Niedźwiedź brunatny</figcaption>
+            <img
+              src="images/niedzwiedz-brunatny.jpg"
+              alt="Niedźwiedź brunatny"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure>
+            <figcaption>Morświn</figcaption>
+            <img
+              src="images/morswin.jpg"
+              alt="Morświn"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure>
+            <figcaption>Orzeł przedni</figcaption>
+            <img
+              src="images/orzel-przedni.jpg"
+              alt="Orzeł przedni"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure>
+            <figcaption>Puchacz</figcaption>
+            <img
+              src="images/puchacz.jpg"
+              alt="Puchacz"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure>
+            <figcaption>Nocek łydkowłosy</figcaption>
+            <img
+              src="images/nocek-lydkowlosy.jpg"
+              alt="Nocek łydkowłosy"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+      </section>
 
       <section class="section-box">
         <h2>CR — gatunki skrajnie zagrożone</h2>
@@ -127,7 +327,14 @@
       </section>
 
       <section class="section-box">
-        <h2>Pełna lista monitorowanych gatunków</h2>
+        <h2>Zestawienie gatunków wymienionych na stronie</h2>
+        <p>
+          To zestawienie ma charakter przykładowy i nie jest pełnym wykazem
+          monitorowanych gatunków. Kategorie podano tylko tam, gdzie zostały
+          wymienione powyżej; dla pozostałych gatunków kategoria nie jest tu
+          określona. Więcej informacji o wykorzystanych materiałach znajduje się
+          na stronie <a href="zrodla.html">Źródła</a>.
+        </p>
 
         <div class="lista-gatunkow" id="lista">
           <ul>
@@ -153,8 +360,8 @@
         </div>
 
         <div class="przyciski">
-          <button id="dol">Przewiń w dół</button>
-          <button id="gora">Przewiń na górę</button>
+          <button id="dol" type="button">Przewiń listę w dół</button>
+          <button id="gora" type="button">Przewiń listę na górę</button>
         </div>
       </section>
     </main>
@@ -178,7 +385,13 @@
       const menu = document.querySelector(".menu");
 
       hamburger.addEventListener("click", () => {
-        menu.classList.toggle("active");
+        const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+        hamburger.setAttribute("aria-expanded", String(!isExpanded));
+        hamburger.setAttribute(
+          "aria-label",
+          isExpanded ? "Otwórz menu" : "Zamknij menu",
+        );
+        menu.classList.toggle("active", !isExpanded);
       });
     </script>
     <script>
@@ -188,7 +401,7 @@
 
       przyciskDol.addEventListener("click", () => {
         lista.scrollBy({
-          top: 100,
+          top: lista.clientHeight,
           behavior: "smooth",
         });
       });
@@ -199,6 +412,42 @@
           behavior: "smooth",
         });
       });
+
+      const galeria = document.querySelector("#galeria-zwierzat");
+      const przyciskWstecz = document.querySelector("#galeria-wstecz");
+      const przyciskDalej = document.querySelector("#galeria-dalej");
+
+      const aktualizujPrzyciskiGalerii = () => {
+        const maksymalnePrzewiniecie =
+          galeria.scrollWidth - galeria.clientWidth;
+        przyciskWstecz.disabled = galeria.scrollLeft <= 5;
+        przyciskDalej.disabled =
+          galeria.scrollLeft >= maksymalnePrzewiniecie - 5;
+      };
+
+      const przewinGalerie = (kierunek) => {
+        const karta = galeria.querySelector("figure");
+        const odstep = parseFloat(getComputedStyle(galeria).gap) || 0;
+        const przesuniecie = karta.getBoundingClientRect().width + odstep;
+        const zachowanie = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches
+          ? "auto"
+          : "smooth";
+
+        galeria.scrollBy({
+          left: kierunek * przesuniecie,
+          behavior: zachowanie,
+        });
+      };
+
+      przyciskWstecz.addEventListener("click", () => przewinGalerie(-1));
+      przyciskDalej.addEventListener("click", () => przewinGalerie(1));
+      galeria.addEventListener("scroll", aktualizujPrzyciskiGalerii, {
+        passive: true,
+      });
+      window.addEventListener("resize", aktualizujPrzyciskiGalerii);
+      aktualizujPrzyciskiGalerii();
     </script>
   </body>
 </html>

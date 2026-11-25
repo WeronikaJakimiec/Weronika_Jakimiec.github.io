@@ -25,7 +25,7 @@
     <header>
       <div class="header-container">
         <img
-          src="logo-strona.jpg"
+          src="images/logo-strona.jpg"
           alt="Logo Czerwonej Listy IUCN"
           class="logo"
         />
@@ -41,10 +41,16 @@
       </div>
 
       <nav>
-        <button id="menu-toggle" aria-label="Otwórz menu">
-          <i class="bi bi-list"></i>
+        <button
+          id="menu-toggle"
+          type="button"
+          aria-label="Otwórz menu"
+          aria-controls="menu-list"
+          aria-expanded="false"
+        >
+          <i class="bi bi-list" aria-hidden="true"></i>
         </button>
-        <ul class="menu">
+        <ul class="menu" id="menu-list">
           <li><a href="index.html">Strona główna</a></li>
           <li><a href="gatunki.html">Zagrożone gatunki</a></li>
           <li><a href="ochrona.html">Jak je chronić?</a></li>
@@ -56,43 +62,67 @@
     <main class="content page-content">
       <h2>Jak możemy chronić zwierzęta?</h2>
 
-      <section class="section-box">
-        <h2>Ochrona naturalnych siedlisk</h2>
-        <p>
-          Lasy, mokradła, łąki i rzeki zapewniają zwierzętom pokarm, schronienie
-          i miejsca rozrodu. Niszczenie tych środowisk może utrudniać
-          przetrwanie wielu gatunkom. Dlatego ważne jest zachowanie naturalnych
-          siedlisk i odpowiedzialne gospodarowanie przestrzenią.
-        </p>
-      </section>
+      <div class="ochrona-lista">
+        <section class="section-box">
+          <h2>
+            <span class="ochrona-ikona" aria-hidden="true">
+              <i class="bi bi-tree-fill"></i>
+            </span>
+            Ochrona naturalnych siedlisk
+          </h2>
+          <p>
+            Lasy, mokradła, łąki i rzeki zapewniają zwierzętom pokarm,
+            schronienie i miejsca rozrodu. Niszczenie tych środowisk może
+            utrudniać przetrwanie wielu gatunkom. Dlatego ważne jest zachowanie
+            naturalnych siedlisk i odpowiedzialne gospodarowanie przestrzenią.
+          </p>
+        </section>
 
-      <section class="section-box">
-        <h2>Ograniczanie zanieczyszczeń</h2>
-        <p>
-          Odpady i zanieczyszczenia mogą szkodzić zwierzętom oraz ich
-          środowisku. Warto prawidłowo segregować odpady, nie pozostawiać śmieci
-          w lesie i nad wodą oraz ograniczać niepotrzebne zużycie plastiku.
-        </p>
-      </section>
+        <section class="section-box">
+          <h2>
+            <span class="ochrona-ikona" aria-hidden="true">
+              <i class="bi bi-recycle"></i>
+            </span>
+            Ograniczanie zanieczyszczeń
+          </h2>
+          <p>
+            Odpady i zanieczyszczenia mogą szkodzić zwierzętom oraz ich
+            środowisku. Warto prawidłowo segregować odpady, nie pozostawiać
+            śmieci w lesie i nad wodą oraz ograniczać niepotrzebne zużycie
+            plastiku.
+          </p>
+        </section>
 
-      <section class="section-box">
-        <h2>Odpowiedzialne zachowanie w przyrodzie</h2>
-        <p>
-          Podczas spacerów należy przestrzegać zasad obowiązujących na terenach
-          chronionych, nie płoszyć zwierząt i nie niszczyć ich schronień. Nie
-          należy również zabierać dzikich zwierząt z ich naturalnego środowiska.
-        </p>
-      </section>
+        <section class="section-box">
+          <h2>
+            <span class="ochrona-ikona" aria-hidden="true">
+              <i class="bi bi-person-walking"></i>
+            </span>
+            Odpowiedzialne zachowanie w przyrodzie
+          </h2>
+          <p>
+            Podczas spacerów należy przestrzegać zasad obowiązujących na
+            terenach chronionych, nie płoszyć zwierząt i nie niszczyć ich
+            schronień. Nie należy również zabierać dzikich zwierząt z ich
+            naturalnego środowiska.
+          </p>
+        </section>
 
-      <section class="section-box">
-        <h2>Poszerzanie wiedzy</h2>
-        <p>
-          Korzystanie ze sprawdzonych źródeł pomaga lepiej zrozumieć potrzeby
-          poszczególnych gatunków. Warto poznawać publikacje instytucji
-          zajmujących się ochroną przyrody i przekazywać rzetelne informacje
-          innym osobom.
-        </p>
-      </section>
+        <section class="section-box">
+          <h2>
+            <span class="ochrona-ikona" aria-hidden="true">
+              <i class="bi bi-book-half"></i>
+            </span>
+            Poszerzanie wiedzy
+          </h2>
+          <p>
+            Korzystanie ze sprawdzonych źródeł pomaga lepiej zrozumieć potrzeby
+            poszczególnych gatunków. Warto poznawać publikacje instytucji
+            zajmujących się ochroną przyrody i przekazywać rzetelne informacje
+            innym osobom.
+          </p>
+        </section>
+      </div>
     </main>
 
     <footer>
@@ -114,7 +144,13 @@
       const menu = document.querySelector(".menu");
 
       hamburger.addEventListener("click", () => {
-        menu.classList.toggle("active");
+        const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+        hamburger.setAttribute("aria-expanded", String(!isExpanded));
+        hamburger.setAttribute(
+          "aria-label",
+          isExpanded ? "Otwórz menu" : "Zamknij menu",
+        );
+        menu.classList.toggle("active", !isExpanded);
       });
     </script>
   </body>

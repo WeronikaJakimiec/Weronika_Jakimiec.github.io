@@ -25,7 +25,7 @@
     <header>
       <div class="header-container">
         <img
-          src="logo-strona.jpg"
+          src="images/logo-strona.jpg"
           alt="Logo Czerwonej Listy IUCN"
           class="logo"
         />
@@ -41,10 +41,16 @@
       </div>
 
       <nav>
-        <button id="menu-toggle" aria-label="Otwórz menu">
-          <i class="bi bi-list"></i>
+        <button
+          id="menu-toggle"
+          type="button"
+          aria-label="Otwórz menu"
+          aria-controls="menu-list"
+          aria-expanded="false"
+        >
+          <i class="bi bi-list" aria-hidden="true"></i>
         </button>
-        <ul class="menu">
+        <ul class="menu" id="menu-list">
           <li><a href="index.html">Strona główna</a></li>
           <li><a href="gatunki.html">Zagrożone gatunki</a></li>
           <li><a href="ochrona.html">Jak je chronić?</a></li>
@@ -61,7 +67,7 @@
       </p>
     </section>
 
-    <main>
+    <main class="home-columns">
       <section class="kolumna">
         <h2>Czym jest czerwona lista?</h2>
         <p>
@@ -69,6 +75,12 @@
           wymaga uwagi. Informacje o stopniu zagrożenia pomagają rozpoznawać
           problemy przyrodnicze i planować działania ochronne.
         </p>
+        <ul class="podglad-kategorii">
+          <li><strong>CR</strong><span>Skrajnie zagrożone</span></li>
+          <li><strong>EN</strong><span>Silnie zagrożone</span></li>
+          <li><strong>VU</strong><span>Narażone</span></li>
+          <li><strong>NT</strong><span>Bliskie zagrożenia</span></li>
+        </ul>
       </section>
 
       <section class="kolumna">
@@ -83,6 +95,35 @@
           Przykłady wybranych zwierząt przedstawiono na podstronie
           <a href="gatunki.html">Zagrożone gatunki</a>.
         </p>
+        <div class="mini-galeria" aria-label="Przykłady zagrożonych gatunków">
+          <figure>
+            <img
+              src="images/kraska.jpg"
+              alt="Kraska siedząca na gałęzi"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Kraska</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="images/zubr.jpg"
+              alt="Żubr w naturalnym otoczeniu"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Żubr</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="images/zolw-blotny.jpg"
+              alt="Żółw błotny na trawie"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Żółw błotny</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section class="kolumna">
@@ -97,6 +138,17 @@
           informacji znajdziesz na podstronie
           <a href="ochrona.html">Jak je chronić?</a>.
         </p>
+        <figure class="zdjecie-siedliska">
+          <img
+            src="images/morswin.jpg"
+            alt="Morświn pływający w wodzie"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>
+            Zachowanie środowiska wodnego pomaga chronić gatunki.
+          </figcaption>
+        </figure>
       </section>
     </main>
 
@@ -121,7 +173,10 @@
       <div class="content footer-content">
         <h2>Informacje o stronie</h2>
         <p>Autor: Weronika Jakimiec</p>
-        <p>Temat: Ochrona zagrożonych gatunków zwierząt w Polsce</p>
+        <p>
+          Opis: Strona poświęcona ochronie zagrożonych gatunków zwierząt w
+          Polsce
+        </p>
         <p>
           Kontakt:
           <a href="mailto:256132@edu.p.lodz.pl"> 256132@edu.p.lodz.pl </a>
@@ -149,7 +204,13 @@
       const menu = document.querySelector(".menu");
 
       hamburger.addEventListener("click", () => {
-        menu.classList.toggle("active");
+        const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+        hamburger.setAttribute("aria-expanded", String(!isExpanded));
+        hamburger.setAttribute(
+          "aria-label",
+          isExpanded ? "Otwórz menu" : "Zamknij menu",
+        );
+        menu.classList.toggle("active", !isExpanded);
       });
       const modal = document.querySelector("#modal");
       const openBtn = document.querySelector("#openModal");

@@ -25,7 +25,7 @@
     <header>
       <div class="header-container">
         <img
-          src="logo-strona.jpg"
+          src="images/logo-strona.jpg"
           alt="Logo Czerwonej Listy IUCN"
           class="logo"
         />
@@ -41,10 +41,16 @@
       </div>
 
       <nav>
-        <button id="menu-toggle" aria-label="Otwórz menu">
-          <i class="bi bi-list"></i>
+        <button
+          id="menu-toggle"
+          type="button"
+          aria-label="Otwórz menu"
+          aria-controls="menu-list"
+          aria-expanded="false"
+        >
+          <i class="bi bi-list" aria-hidden="true"></i>
         </button>
-        <ul class="menu">
+        <ul class="menu" id="menu-list">
           <li><a href="index.html">Strona główna</a></li>
           <li><a href="gatunki.html">Zagrożone gatunki</a></li>
           <li><a href="ochrona.html">Jak je chronić?</a></li>
@@ -121,6 +127,211 @@
           opracowania dotyczące konkretnego gatunku.
         </p>
       </section>
+
+      <section class="section-box">
+        <h2>Źródła zdjęć w galerii</h2>
+        <ul>
+          <li>
+            Głuszec — Richard Bartz,
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Tetrao_urogallus_Richard_Bartz.jpg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons
+            </a>
+            (CC BY-SA 2.5).
+          </li>
+          <li>
+            Żubr — Michael Gäbler,
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Bison_bonasus_(Linnaeus_1758).jpg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons
+            </a>
+            (CC BY 3.0).
+          </li>
+          <li>
+            Ryś — David Castor,
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Lynx_lynx-4.JPG"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons
+            </a>
+            (domena publiczna).
+          </li>
+          <li>
+            Żółw błotny — George Chernilevsky,
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Emys_orbicularis_2009_G1.jpg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons
+            </a>
+            (domena publiczna).
+          </li>
+          <li>
+            Żbik — Michael Gäbler,
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Die_Wildkatze_in_der_Wildnis.jpg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons
+            </a>
+            (CC BY 3.0).
+          </li>
+          <li>
+            Kraska — Charles J. Sharp,
+            <a
+              href="https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=Coracias%20garrulus%20Charles%20J.%20Sharp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons
+            </a>
+            (CC BY-SA 4.0).
+          </li>
+          <li>
+            Sokół wędrowny — Kytabu,
+            <a
+              href="https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=Falco%20peregrinus%20Kytabu"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons
+            </a>
+            (CC BY-SA 4.0).
+          </li>
+          <li>
+            Wąż Eskulapa — FelixReimann,
+            <a
+              href="https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=Zamenis%20longissimus%20FelixReimann"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons
+            </a>
+            (CC BY-SA 3.0).
+          </li>
+          <li>
+            Cietrzew — Giles Laurent,
+            <a
+              href="https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=Tetrao%20tetrix%20Giles%20Laurent"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons
+            </a>
+            (CC BY-SA 4.0).
+          </li>
+          <li>
+            Gniewosz plamisty — Dimitri Laurent,
+            <a
+              href="https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=Coronella%20austriaca%20Dimitri%20Laurent"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons
+            </a>
+            (CC BY-SA 4.0).
+          </li>
+          <li>
+            Wodniczka — Jan Ebr,
+            <a
+              href="https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=Acrocephalus%20paludicola%20Jan%20Ebr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons
+            </a>
+            (CC BY 4.0).
+          </li>
+          <li>
+            Piekielnica — Gilles San Martin,
+            <a
+              href="https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=Alburnoides%20bipunctatus%20Gilles%20San%20Martin"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons
+            </a>
+            (CC BY-SA 2.0).
+          </li>
+          <li>
+            Wilk — Wilfredor,
+            <a
+              href="https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=Canis%20lupus%20Wilfredor"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons
+            </a>
+            (CC0).
+          </li>
+          <li>
+            Niedźwiedź brunatny — Malene Thyssen,
+            <a
+              href="https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=Ursus%20arctos%20Malene%20Thyssen"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons
+            </a>
+            (CC BY 2.5).
+          </li>
+          <li>
+            Morświn — Erik Christensen,
+            <a
+              href="https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=Phocoena%20phocoena%20Erik%20Christensen"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons
+            </a>
+            (CC BY-SA 3.0).
+          </li>
+          <li>
+            Orzeł przedni — Giles Laurent,
+            <a
+              href="https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=Aquila%20chrysaetos%20Giles%20Laurent"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons
+            </a>
+            (CC BY-SA 4.0).
+          </li>
+          <li>
+            Puchacz — Rhododendrites,
+            <a
+              href="https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=Bubo%20bubo%20Rhododendrites"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons
+            </a>
+            (CC BY-SA 4.0).
+          </li>
+          <li>
+            Nocek łydkowłosy — Rauno Kalda,
+            <a
+              href="https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=Myotis%20dasycneme%20Rauno%20Kalda"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons
+            </a>
+            (CC BY-SA 4.0).
+          </li>
+        </ul>
+      </section>
+
     </main>
 
     <footer>
@@ -142,7 +353,13 @@
       const menu = document.querySelector(".menu");
 
       hamburger.addEventListener("click", () => {
-        menu.classList.toggle("active");
+        const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+        hamburger.setAttribute("aria-expanded", String(!isExpanded));
+        hamburger.setAttribute(
+          "aria-label",
+          isExpanded ? "Otwórz menu" : "Zamknij menu",
+        );
+        menu.classList.toggle("active", !isExpanded);
       });
     </script>
   </body>
